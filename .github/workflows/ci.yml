@@ -1,0 +1,15 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --index-url https://download.pytorch.org/whl/cpu torch
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests
+      # the committed policies must still evaluate (quick smoke run of the evaluation code path)
+      - run: python -c "import pickle,sys; sys.path.insert(0,'.'); from prl.agents import evaluate; from prl.env import EnvConfig; p=pickle.load(open('results/policy_ppo_full_s0.pkl','rb')); print(evaluate(p, EnvConfig(), n=500)['success'])"

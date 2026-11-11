@@ -1,0 +1,17 @@
+policy,direction_deg,label,episodes,success
+capture_point,-135,,965,0.03005181347150259
+capture_point,-90,toward stance leg (crossover side),991,0.0
+capture_point,-45,,1012,0.02865612648221344
+capture_point,0,forward,1029,0.9280855199222546
+capture_point,45,,996,0.5180722891566265
+capture_point,90,toward swing leg,1004,0.0
+capture_point,135,,999,0.4994994994994995
+capture_point,180,backward,1004,0.9382470119521913
+ppo_full_s0,-135,,965,0.22176165803108808
+ppo_full_s0,-90,toward stance leg (crossover side),991,0.0
+ppo_full_s0,-45,,1012,0.2134387351778656
+ppo_full_s0,0,forward,1029,1.0
+ppo_full_s0,45,,996,0.8232931726907631
+ppo_full_s0,90,toward swing leg,1004,0.10756972111553785
+ppo_full_s0,135,,999,0.8328328328328328
+ppo_full_s0,180,backward,1004,0.999003984063745
